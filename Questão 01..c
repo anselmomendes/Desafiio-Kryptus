@@ -12,11 +12,19 @@
 #include <stdlib.h>
 #include <string.h>
 
+struct lista {
+	int data;
+	struct lista* prox;
+};
+
 //tipo de dado
 typedef struct lista Lista;
 
+//Cria a pilha
+Lista* cria_lista(void);
+
 //Enserir um item na lista
-void put();
+void put(Lista** l, int i);
 
 //Recuperar um item da lista
 Lista* get(Lista** l);
@@ -37,19 +45,25 @@ void first(Lista* l);
 void last(Lista* l);
 
 
-
-
 int main(int argc, char *argv[]) {
 
-struct lista {
-	int info;
-	struct lista* prox;
-};
+Lista* l = cria_lista();
 
-Lista* a;
+put(&l,3);
+put(&l,7);
+put(&l,2);
+get(&l);
+put(&l,8);
+
 
 
 	return EXIT_SUCCESS;
+}
+
+Lista* cria_lista(void) {
+	Lista* l = (Lista*) malloc(sizeof(Lista));
+	l->data = NULL;
+	return l;
 }
 
 void put(Lista** l, int i) {
@@ -58,16 +72,23 @@ void put(Lista** l, int i) {
 		printf("Memoria insuficiente!\n");
 		exit(1);
 	}
-	novo->info = i;
+	novo->data = i;
 	novo->prox = *l;
 	*l = novo;
 	printf("put %d", i);
+}
+
+Lista* get(Lista* l){
+	if(l == NULL){
+		printf("Lista Vazia!\n");
+		exit(1);
+	}l = 
 }
 
 void list(Lista* l) {
 	Lista* aux;
 	printf("list\n");
 	for(aux = l; aux != NULL; aux = aux->prox) {
-		printf("%d ", aux->info);
+		printf("%d ", aux->data);
 	}
 }
