@@ -27,7 +27,7 @@ Lista* cria_lista(void);
 void put(Lista** l, int i);
 
 //Recuperar um item da lista
-Lista* get(Lista** l);
+Lista* get(Lista* l);
 
 //Listar todos os items da lista
 void list(Lista* l);
@@ -75,14 +75,17 @@ void put(Lista** l, int i) {
 	novo->data = i;
 	novo->prox = *l;
 	*l = novo;
-	printf("put %d", i);
+	printf("put %d\n", i);
 }
 
 Lista* get(Lista* l){
 	if(l == NULL){
 		printf("Lista Vazia!\n");
 		exit(1);
-	}l = 
+	}
+	printf("get %d\n",&l->data);
+	return l->prox;
+
 }
 
 void list(Lista* l) {
