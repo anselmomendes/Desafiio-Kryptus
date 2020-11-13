@@ -1,6 +1,6 @@
 /*
  ============================================================================
- Name        : Prompt.c
+ Name        : Questão 1.
  Author      : Anselmo Mendes Oliveira
  Version     : 1.0.0
  Copyright   : Kryptus
@@ -11,6 +11,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#Anselmo Mendes Oliveira
+
+#tipo de dado
+typedef struct lista Lista;
+
+#Enserir um item na lista
+void put();
+
+#Recuperar um item da lista
+Lista* get(Lista* l);
+
+#Listar todos os items da lista
+void list(Lista* l);
+
+#Remover item da lista
+void remove(Lista* l);
+
+#Esvaziar lista
+void clear(Lista* l);
+
+#Recuperar o primeiro item da lista
+void first(Lista* l);
+
+#Recuperar o ultimo item da lista;
+void last(Lista* l);
 
 void print_entry(char *entry) {
 	printf("You entered: %s\n", entry);
